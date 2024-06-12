@@ -1,0 +1,11 @@
+# What additional architectural change can be made to reduce the internet-facing attack surface of the web application instance.
+- Move "Web Service Instance-C3" into private subnet
+- Change the "WebAppSG" only allow access from "AppLoadBalancerSG"
+- Enable S3 server-side encryption and block all public access
+- Use a CDN as only access point to our VPC such as Cloudfront 
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket?
+- No, creating VPC endpoints alone is not sufficient to secure S3 bucket
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+- No, applying the default encryption setting to S3 buckets will not automatically encrypt the data that already exists in the buckets. The default encryption setting only applies to new objects that are uploaded to the bucket after the setting is enabled.
+# The changes you made above were done through the console or CLI; describe the outcome if the original cloudformation templates are applied to this environment?
+- If the original cloudformation templates are applied to this environment, the configurations that I've made tbrough console or CLI will be overridden and reset to origin configurations that currently insecure

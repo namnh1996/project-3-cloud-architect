@@ -1,0 +1,7 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+- Detected: UnauthorizedAccess:EC2/SSHBruteForce
+- Brute force attacks are used to gain unauthorized access to your instance by guessing the SSH password.
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+- To detect an unauthorized or unexpected activity in your AWS environment. GuardDuty analyzes and processes data from AWS CloudTrail event logs, AWS CloudTrail management events, AWS CloudTrail data events for S3, VPC flow logs, DNS logs, EKS audit logs, RDS login activity monitoring, and EBS volumes.
+- The reference details for this attack can be found in the VPC flow logs written to S3
